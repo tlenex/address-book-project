@@ -1,7 +1,7 @@
 /**
  * Created by rafal on 10.01.2017.
  */
-var Module = require('../AddressBookBusinessLogic.js');
+var Module = require('../../models/addressBookBusinessLogic.js');
 
 describe("Given a new address book module", function () {
     beforeEach(function () {

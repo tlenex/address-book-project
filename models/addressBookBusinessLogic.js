@@ -2,7 +2,7 @@
  * Created by rafal on 04.01.2017.
  */
 
-var AddressBook = require('./AddressBook.js');
+var AddressBook = require('./addressBook.js');
 
 var AddressBookBusinessLogic = function () {
     this.addressBook = new AddressBook();
