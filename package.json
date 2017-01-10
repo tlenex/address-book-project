@@ -1,0 +1,16 @@
+{
+  "name": "address-book-project",
+  "version": "1.0.0",
+  "description": "My first bigger project",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.13.4",
+    "jasmine-node": "^1.14.5"
+  },
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "author": "Rosa",
+  "license": "ISC"
+}
