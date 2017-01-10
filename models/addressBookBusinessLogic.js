@@ -4,9 +4,12 @@
 
 var AddressBook = require('./addressBook.js');
 
-var AddressBookBusinessLogic = function () {
-    this.addressBook = new AddressBook();
-
+var AddressBookBusinessLogic = function (addressBook) {
+    if (addressBook) {
+        this.addressBook = addressBook;
+    } else {
+        this.addressBook = new AddressBook();
+    }
 };
 
 AddressBookBusinessLogic.prototype.saveElement = function (elem) {

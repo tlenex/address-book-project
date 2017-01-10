@@ -19,14 +19,14 @@ elem.name = 'Gdereck';
 addressBook.saveElement(elem);
 //temp-end
 
-var router = require('./router')(addressBook);
-
 var app = express();
 app.set('port', 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', router);
+require('./router')(app, addressBook);
+// console.log(router);
+// app.use('/', router);
 
 
 // catch 404 and forward to error handler
@@ -44,7 +44,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.json(err);
 });
 
 http.createServer(app).listen(app.get('port'), function () {

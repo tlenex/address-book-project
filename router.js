@@ -1,8 +1,12 @@
 var express = require('express');
 var addressBookController = require('./controllers/addressBookController');
 
-module.exports = function (addressBook) {
-    var router = express.Router();
-    router.get('/', addressBookController.getItems);
-    return router;
+module.exports = function (app, addressBook) {
+
+    var router = new express.Router();
+    var controller = addressBookController(app, addressBook);
+
+    router.get('/', controller.getItems);
+
+    return app.use('/', router);
 };
